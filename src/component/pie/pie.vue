@@ -1,6 +1,7 @@
 <template>
     <div class="pie-container">
-        <canvas class="pie" ref="pie"></canvas>
+        <!-- 最好使用div渲染，canvas很模糊 -->
+        <div class="pie" ref="pie"></div>
         <div class="control"></div>
     </div>
 </template>
@@ -19,21 +20,31 @@ import * as echarts from 'echarts'
         return {
             option:{
                 title:{
-                    top: '20',
+                    top: '40',
+                    left: '30',
                     text: '人口分布',
                     textStyle: {
                         color: 'black',
-                        fontSize: 15,
+                        fontSize: 20,
                         fontFamily: 'serif',
-                        align: 'left'
+                        fontWeight: 'bold',
+                        align: 'left',
+                        verticalAlign: 'middle',
+                        lineHeight: 60,
+                        textBorderWidth:2,
+                        textBorderColor:'white'
                     }
                 },
                 legend:{
                     type:"plain"
                 },
-                grid:{
-                    show:true
-                },
+                grid: {
+                    left: '3%',
+                    right: '20%',
+                    top: '8%',
+                    containLabel: true,
+                    show:false
+                }, 
                 backgroundColor: 'white',
                 visualMap: [
                     {
@@ -45,13 +56,16 @@ import * as echarts from 'echarts'
                         }
                     }
                 ],
+                tooltip:{
+                    show:false
+                },
                 series : [
                     {
                         name:'人口分布',
                         type:'pie',
                         clockwise:'true',
                         startAngle:'0',
-                        radius : '80%',
+                        radius : 120,
                         center: ['50%', '50%'],
                         data:[
                             {
@@ -65,12 +79,17 @@ import * as echarts from 'echarts'
                                     smooth:false
                                 },
                                 itemStyle:{
-                                    color: 'rgb(128, 128, 128)',
+                                    color: 'red',
                                     normal:{
                                         color:'yellow',
                                     },
                                     borderColor: 'white',
                                     borderWidth: 2
+                                },
+                                emphasis:{
+                                    itemStyle:{
+                                        color:'yellow'
+                                    }
                                 }
                             },
                             {
@@ -78,6 +97,11 @@ import * as echarts from 'echarts'
                                 value:10,
                                 itemStyle:{
                                     normal:{
+                                        color:'green'
+                                    }
+                                },
+                                emphasis:{
+                                    itemStyle:{
                                         color:'green'
                                     }
                                 }
@@ -89,6 +113,11 @@ import * as echarts from 'echarts'
                                     normal:{
                                         color:'blue'
                                     }
+                                },
+                                emphasis:{
+                                    itemStyle:{
+                                        color:'blue'
+                                    }
                                 }
                             },
                             {
@@ -96,6 +125,11 @@ import * as echarts from 'echarts'
                                 value:10,
                                 itemStyle:{
                                     normal:{
+                                        color:'black'
+                                    }
+                                },
+                                emphasis:{
+                                    itemStyle:{
                                         color:'black'
                                     }
                                 }
@@ -108,14 +142,13 @@ import * as echarts from 'echarts'
         }
     },
     mounted(){
-         this.$data.instance = echarts.init(this.$refs.pie as HTMLCanvasElement,{
+         this.$data.instance = echarts.init(this.$refs.pie as HTMLDivElement,{
             /** 设备像素比 */
             devicePixelRatio: window.devicePixelRatio,
             /** 渲染器，canvas、svg */
             renderer: "canvas",
-            /** 长宽取dom长宽 */
-            width: "auto",
-            height: "auto"
+            width:'auto',
+            height:'auto'
         });
         (this.$data.instance as echarts.ECharts).setOption(this.$data.option,true,true)
     }
@@ -128,14 +161,14 @@ export default class Pie extends Vue{
 
 <style lang="scss">
     .pie-container{
-        width:80%;
+        width:100%;
         height:100%;
-        margin: 0px auto 0px auto;
     }
     .pie{
-        margin: 20% 0px 0px 0px;
-        width:80%;
-        height:80%;
+        margin: 30px auto auto 5%;
+        width:60%;
+        height:500px;
+        border: 1px solid black;
     }
 
 </style>
