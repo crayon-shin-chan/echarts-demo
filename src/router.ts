@@ -1,6 +1,8 @@
 import VueRouter from 'vue-router'
 import Vue from 'vue'
 
+import Pie from './component/pie/pie.vue'
+
 Vue.use(VueRouter);
 
 const router:VueRouter = new VueRouter(
@@ -8,7 +10,7 @@ const router:VueRouter = new VueRouter(
         routes:[
             {
                 path:"/",
-                component: null as any
+                component: Pie
             }
         ]
     }

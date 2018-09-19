@@ -10,15 +10,23 @@
       <router-link to="/histogram" class="header-item">柱状图</router-link>
       <router-link to="/rising" class="header-item">旭日图</router-link>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <!-- vue组件脚本，使用ts语言，包含组件类 -->
 <script lang="ts">
+
 import Vue from 'vue'
 import Component from 'vue-class-component'
 
-@Component({})
+import Pie from './pie/pie.vue'
+
+@Component({
+  components:{
+    Pie
+  }
+})
 export default class App extends Vue {
   
 }
