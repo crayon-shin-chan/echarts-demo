@@ -10,6 +10,8 @@
       // 启用 vue-class-component 及 vuex-class 需要开启此选项
       "experimentalDecorators": true,
       // 启用 vuex-class 需要开启此选项
-      "strictFunctionTypes": false
+      "strictFunctionTypes": false,
+      //禁用严格属性初始化，即ts类对象私有属性，可以不初始化
+      "strictPropertyInitialization":false
     }
   }

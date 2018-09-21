@@ -12,13 +12,12 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 import * as echarts from 'echarts'
 
-@Component({
-    data: function():{
-        option:echarts.EChartOption,
-        instance:echarts.ECharts|undefined
-    }{
-        return {
-            option:{
+/** 虽然Component装饰器中包含各种属性，data、method等，但是在装饰器参数中定义vue组件属性并不合适 */
+@Component({})
+export default class Pie extends Vue{
+
+    /** echarts选项 */
+    option:echarts.EChartOption = {
                 title:{
                     top: '40',
                     left: '30',
@@ -137,12 +136,16 @@ import * as echarts from 'echarts'
                         ],
                     }
                 ]
-            },
-            instance: undefined
-        }
-    },
+            };
+
+    instance:echarts.ECharts;
+
+    $refs:{
+        pie:HTMLDivElement
+    } ;
+
     mounted(){
-         this.$data.instance = echarts.init(this.$refs.pie as HTMLDivElement,{
+         this.instance = echarts.init(this.$refs.pie,{
             /** 设备像素比 */
             devicePixelRatio: window.devicePixelRatio,
             /** 渲染器，canvas、svg */
@@ -150,10 +153,9 @@ import * as echarts from 'echarts'
             width:'auto',
             height:'auto'
         });
-        (this.$data.instance as echarts.ECharts).setOption(this.$data.option,true,true)
+        this.instance.setOption(this.$data.option,true,true)
     }
-})
-export default class Pie extends Vue{
+
 }
 
 
