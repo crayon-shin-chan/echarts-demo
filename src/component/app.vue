@@ -20,12 +20,9 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 
-import Pie from './pie/pie.vue'
-
+/** 使用vue-router加载的组件，不需要再components选项中声明，只需要声明在template中直接出现的组件即可 */
 @Component({
-  components:{
-    Pie
-  }
+  components:{}
 })
 export default class App extends Vue {
   
