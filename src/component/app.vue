@@ -7,7 +7,7 @@
       </div>
       <router-link to="/" class="header-item">首页</router-link>
       <router-link to="/pie" class="header-item">饼图</router-link>
-      <router-link to="/histogram" class="header-item">柱状图</router-link>
+      <router-link to="/line" class="header-item">折线图</router-link>
       <router-link to="/rising" class="header-item">旭日图</router-link>
     </div>
     <router-view></router-view>
