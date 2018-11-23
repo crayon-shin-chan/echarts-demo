@@ -14,7 +14,7 @@ import Vue from 'vue'
  * 说明最后组件代码并未分割，但是使用__webpack_require__获取代码块的时机向后延迟了
  */
 const Pie = () => import(/* webpackChunkName: "Pie" */ './component/pie/pie.vue')
-
+const Line = () => import(/* webpackChunkName: "Line" */ './component/line/line.vue')
 Vue.use(VueRouter);
 
 const router:VueRouter = new VueRouter(
@@ -23,6 +23,10 @@ const router:VueRouter = new VueRouter(
             {
                 path:"/pie",
                 component: Pie
+            },
+            {
+                path:"/line",
+                component: Line
             }
         ]
     }

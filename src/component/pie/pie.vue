@@ -149,10 +149,10 @@ export default class Pie extends Vue{
         }
     ];
 
+    /** 单项数据，包含了图的类型 */
     series1:object = {
         name:'人口分布',
         type:'pie',
-        
         legendHoverLink:false,
         /** 图例覆盖时的放大动画效果 */
         hoverAnimation:false,
@@ -189,7 +189,7 @@ export default class Pie extends Vue{
         }
     }
 
-    /** 数据项，为数组 */
+    /** 数据项，为数组，一般只需要一项，需要多条线时可能会有多项 */
     series :object[] = [ this.series1 ]
 
     /** echarts选项 */
