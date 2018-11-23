@@ -53,7 +53,7 @@ export default class Pie extends Vue{
         type:"plain"
     }
 
-    /** 提示网格选项 */
+    /** 提示网格选项，用于包裹住图形 */
     grid:object = {
         left: '3%',
         right: '20%',
@@ -74,7 +74,7 @@ export default class Pie extends Vue{
         }
     ]
 
-    /** 提示工具 */
+    /** 提示工具，鼠标放置到图形上时，显示提示框 */
     tooltip: object = {
         show:false
     }
@@ -189,7 +189,7 @@ export default class Pie extends Vue{
         }
     }
 
-    /**  */
+    /** 数据项，为数组 */
     series :object[] = [ this.series1 ]
 
     /** echarts选项 */
