@@ -12,6 +12,7 @@ import { ECharts,EChartOption,EChartTitleOption,init } from 'echarts'
 import Component from 'vue-class-component'
 import Vue from 'vue'
 
+/** 基本区域图组件 */
 @Component({})
 export default class BasicArea extends Vue{
 
@@ -31,8 +32,9 @@ export default class BasicArea extends Vue{
 
 
     /**
-     * echarts折线图，即含有x、y轴配置，需要再x、y轴两个方向传入数据，一次最多可以有两条线
-     * 折线图与曲线图实际上是一回事，只在于一个smooth设置
+     * 基本区域图，主要有以下属性
+     * series.areaStyle：区域样式，就算为空对象，也代表这是个区域图，如果不设置，则为折线图
+     * xAxis.boundaryGap：为true时，开始点的横坐标不是0
      */
     option:EChartOption = {
         xAxis: {
@@ -46,7 +48,7 @@ export default class BasicArea extends Vue{
         series: [{
             data: [820, 932, 901, 934, 1290, 1330, 1320],
             type: 'line',
-            areaStyle: {}
+            areaStyle:{}
         }]
     };
 
