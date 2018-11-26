@@ -31,11 +31,13 @@ export default class Line extends Vue{}
     }
 
     .line-list{
+        box-sizing: border-box;
         width:10%;
         height:100%;
-        background-color: green;
+        padding: 20px 0px 0px 10px;
         float: left;
         clear: both;
+        background-color: greenyellow;
     }
 
     .line-container{
@@ -46,10 +48,14 @@ export default class Line extends Vue{}
     }
 
     .line-item{
+        font-size: 20px;
         margin: 0px;
-        width:60%;
-        height:500px;
-        border: 1px solid black;
+        padding: 0px;
+        width:100%;
+        height: 100px;
+        color: black;
+        text-decoration: none;
+        border-bottom: 1px black solid;
     }
 
     
