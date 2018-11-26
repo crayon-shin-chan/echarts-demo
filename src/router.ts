@@ -15,6 +15,9 @@ import Vue from 'vue'
  */
 const Pie = () => import(/* webpackChunkName: "Pie" */ './component/pie/pie.vue')
 const Line = () => import(/* webpackChunkName: "Line" */ './component/line/line.vue')
+const BasicLine = () => import(/* webpackChunkName: "BasicLine" */ './component/line/basic.line.vue')
+
+
 Vue.use(VueRouter);
 
 const router:VueRouter = new VueRouter(
@@ -26,7 +29,13 @@ const router:VueRouter = new VueRouter(
             },
             {
                 path:"/line",
-                component: Line
+                component: Line,
+                children:[
+                    {
+                      path: 'basic',
+                      component: BasicLine
+                    }
+                  ]
             }
         ]
     }

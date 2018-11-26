@@ -31,7 +31,21 @@ export default class App extends Vue {
 
 <!-- vue组件样式，使用scss -->
 <style lang="scss">
-body{
+
+  html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow:hidden;
+  }
+
+  .container{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow:hidden;
+  }
+
   .header{
     width:100%;
     height:50px;
@@ -43,6 +57,7 @@ body{
   .logo-container{
     line-height: 50px;
     width:150px;
+    height: 50px;
     float: left;
   }
   .logo{
@@ -68,5 +83,5 @@ body{
     }
     color: white;
   }
-}
+
 </style>
