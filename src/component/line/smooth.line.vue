@@ -12,6 +12,7 @@ import { ECharts,EChartOption,EChartTitleOption,init } from 'echarts'
 import Component from 'vue-class-component'
 import Vue from 'vue'
 
+/** 平滑曲线图组件 */
 @Component({})
 export default class SmoothLine extends Vue{
 
@@ -31,8 +32,8 @@ export default class SmoothLine extends Vue{
 
 
     /**
-     * echarts折线图，即含有x、y轴配置，需要再x、y轴两个方向传入数据，一次最多可以有两条线
-     * 折线图与曲线图实际上是一回事，只在于一个smooth设置
+     * 曲线图与折线图的区别为：
+     * series[0].smooth：为true时代表曲线图，即对连线进行了平滑处理，为false，则变为折线图
      */
     option:EChartOption = {
         xAxis: {
