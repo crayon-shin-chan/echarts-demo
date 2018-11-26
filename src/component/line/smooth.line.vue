@@ -36,6 +36,9 @@ export default class SmoothLine extends Vue{
      * series[0].smooth：为true时代表曲线图，即对连线进行了平滑处理，为false，则变为折线图
      */
     option:EChartOption = {
+        title: {
+            text: '平滑曲线图'
+        },
         xAxis: {
             type: 'category',
             data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']

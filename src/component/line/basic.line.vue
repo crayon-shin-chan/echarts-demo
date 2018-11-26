@@ -35,6 +35,9 @@ export default class BasicLine extends Vue{
      * 折线图与曲线图实际上是一回事，只在于一个smooth设置
      */
     option:EChartOption = {
+        title: {
+            text: '基本折线图'
+        },
         toolbox: {
             show: true,
             feature: {

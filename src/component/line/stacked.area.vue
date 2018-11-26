@@ -12,6 +12,7 @@ import { ECharts,EChartOption,EChartTitleOption,init } from 'echarts'
 import Component from 'vue-class-component'
 import Vue from 'vue'
 
+/** 堆叠区域图组件 */
 @Component({})
 export default class StackedArea extends Vue{
 
@@ -31,14 +32,22 @@ export default class StackedArea extends Vue{
 
 
     /**
-     * echarts折线图，即含有x、y轴配置，需要再x、y轴两个方向传入数据，一次最多可以有两条线
-     * 折线图与曲线图实际上是一回事，只在于一个smooth设置
+     * 堆叠区域图，每个横坐标上，各项纵坐标值进行堆叠，属性有下
+     * title：图例标题，默认显示在哦让其左上角
+     * tooltip：全局提示框，提示框包含三个部分，横轴刻度、纵轴刻度、交汇点提示框
+     * tooltip.trigger：axis，代表提示框由坐标轴触发
+     * tooltip.axisPointer：坐标轴指示器配置项
+     * legend：图例配置，图例显示为容器上方
+     * legend.data：图例数据，可以为字符串数组或者对象数组
+     * series：所谓堆叠区域图，其实就是直接配置了多个区域图，堆叠时自动的，不需要配置什么
+     * 如果直接配置多个折线图，这些折线无法堆叠
      */
     option:EChartOption = {
         title: {
             text: '堆叠区域图'
         },
         tooltip : {
+            show: true,
             trigger: 'axis',
             axisPointer: {
                 type: 'cross',

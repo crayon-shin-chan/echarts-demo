@@ -37,6 +37,9 @@ export default class BasicArea extends Vue{
      * xAxis.boundaryGap：为true时，开始点的横坐标不是0
      */
     option:EChartOption = {
+        title: {
+            text: '基本区域图'
+        },
         xAxis: {
             type: 'category',
             boundaryGap: false,
