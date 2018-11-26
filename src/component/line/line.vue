@@ -3,6 +3,7 @@
     <div class="line-display">
         <!--线形图列表-->
         <div class="line-list">
+            <!--子路由路径需要使用全路径-->
             <router-link to="/line/basic" class="line-item">折线图</router-link>
         </div>
         <!--线型图容器-->

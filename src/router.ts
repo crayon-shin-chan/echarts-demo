@@ -30,6 +30,7 @@ const router:VueRouter = new VueRouter(
             {
                 path:"/line",
                 component: Line,
+                /** 子路由路径不可以添加/开头，不然找不到 */
                 children:[
                     {
                       path: 'basic',
