@@ -37,7 +37,7 @@ export default class Line extends Vue{}
         padding: 20px 0px 0px 10px;
         float: left;
         clear: both;
-        background-color: greenyellow;
+        background-color: #6daf52;
     }
 
     .line-container{
