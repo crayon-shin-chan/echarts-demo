@@ -51,11 +51,10 @@ export default class Line extends Vue{}
         font-size: 20px;
         margin: 0px;
         padding: 0px;
-        width:100%;
-        height: 100px;
+        height: 27px;
         color: black;
         text-decoration: none;
-        border-bottom: 1px black solid;
+        border-radius: 4px;
     }
 
     
