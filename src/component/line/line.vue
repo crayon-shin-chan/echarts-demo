@@ -4,7 +4,8 @@
         <!--线形图列表-->
         <div class="line-list">
             <!--子路由路径需要使用全路径-->
-            <router-link to="/line/basic" class="line-item">折线图</router-link>
+            <router-link to="/line/basic" class="line-item">基本折线图</router-link>
+            <router-link to="/line/basic/area" class="line-item">基本区域图</router-link>
         </div>
         <!--线型图容器-->
         <div class="line-container">
@@ -34,7 +35,7 @@ export default class Line extends Vue{}
         box-sizing: border-box;
         width:10%;
         height:100%;
-        padding: 20px 0px 0px 10px;
+        padding: 20px 0px 0px 0px;
         float: left;
         clear: both;
         background-color: #6daf52;
@@ -48,13 +49,16 @@ export default class Line extends Vue{}
     }
 
     .line-item{
-        font-size: 20px;
-        margin: 0px;
-        padding: 0px;
-        height: 27px;
+        display: block;
+        font-size: 18px;
+        margin: 10px 10px 10px 10px;
+        padding: 9px 0px 0px 10px;
+        height: 35px;
         color: black;
         text-decoration: none;
         border-radius: 4px;
+        background-color: #bc457d;
+        border: 1px black solid;
     }
 
     
