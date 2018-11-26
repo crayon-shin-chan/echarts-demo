@@ -6,6 +6,7 @@
             <!--子路由路径需要使用全路径-->
             <router-link to="/line/basic" class="line-item">基本折线图</router-link>
             <router-link to="/line/basic/area" class="line-item">基本区域图</router-link>
+            <router-link to="/line/smooth" class="line-item">平滑曲线图</router-link>
         </div>
         <!--线型图容器-->
         <div class="line-container">

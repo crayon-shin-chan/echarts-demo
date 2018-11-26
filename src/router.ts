@@ -17,6 +17,7 @@ const Pie = () => import(/* webpackChunkName: "Pie" */ './component/pie/pie.vue'
 const Line = () => import(/* webpackChunkName: "Line" */ './component/line/line.vue')
 const BasicLine = () => import(/* webpackChunkName: "BasicLine" */ './component/line/basic.line.vue')
 const BasicArea = () => import(/* webpackChunkName: "BasicArea" */ './component/line/basic.area.vue')
+const SmoothLine = () => import(/* webpackChunkName: "SmoothLine" */ './component/line/smooth.line.vue')
 
 
 Vue.use(VueRouter);
@@ -40,7 +41,11 @@ const router:VueRouter = new VueRouter(
                     {
                         path: 'basic/area',
                         component: BasicArea
-                      }
+                    },
+                    {
+                        path: 'smooth',
+                        component: SmoothLine
+                    }
                   ]
             }
         ]
