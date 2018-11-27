@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server --open --hot --inline",
+    "dev": "webpack-dev-server --open --hot --inline --host=0.0.0.0",
     "check": "tslint -p tsconfig.json -c tslint.json --type-check",
     "fix": "tslint -p tsconfig.json -c tslint.json --fix"
   },

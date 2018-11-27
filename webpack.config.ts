@@ -20,6 +20,11 @@ const config: webpack.Configuration = {
         /**js文件格式 */
         filename: 'js/[name].js'
     },
+    /** 开发服务器配置 */
+    devServer:{
+        /** 禁用域名检查 */
+        disableHostCheck:true
+    },
     devtool: false,
     watch: false,
     profile: true,
