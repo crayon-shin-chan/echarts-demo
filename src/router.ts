@@ -22,6 +22,7 @@ const BasicArea = () => import(/* webpackChunkName: "BasicArea" */ './component/
 const SmoothLine = () => import(/* webpackChunkName: "SmoothLine" */ './component/line/smooth.line.vue')
 const StackedLine = () => import(/* webpackChunkName: "StackedLine" */ './component/line/stacked.line.vue')
 const StackedArea = () => import(/* webpackChunkName: "StackedArea" */ './component/line/stacked.area.vue')
+const RainFall = () => import(/* webpackChunkName: "RainFall" */ './component/line/rain.fall.vue')
 
 
 Vue.use(VueRouter);
@@ -57,6 +58,10 @@ const router:VueRouter = new VueRouter(
                     {
                         path: 'stacked/area',
                         component: StackedArea
+                    },
+                    {
+                        path: 'rain/fall',
+                        component: RainFall
                     }
                   ]
             }
