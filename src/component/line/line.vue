@@ -10,6 +10,7 @@
             <router-link to="/line/stacked" class="line-item">堆叠折线图</router-link>
             <router-link to="/line/stacked/area" class="line-item">堆叠区域图</router-link>
             <router-link to="/line/rain/fall" class="line-item">降雨量图</router-link>
+            <router-link to="/line/large/area" class="line-item">大数据面积图</router-link>
         </div>
         <!--线型图容器-->
         <div class="line-container">

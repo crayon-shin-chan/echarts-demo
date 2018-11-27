@@ -23,6 +23,7 @@ const SmoothLine = () => import(/* webpackChunkName: "SmoothLine" */ './componen
 const StackedLine = () => import(/* webpackChunkName: "StackedLine" */ './component/line/stacked.line.vue')
 const StackedArea = () => import(/* webpackChunkName: "StackedArea" */ './component/line/stacked.area.vue')
 const RainFall = () => import(/* webpackChunkName: "RainFall" */ './component/line/rain.fall.vue')
+const LargeArea = () => import(/* webpackChunkName: "LargeArea" */ './component/line/large.area.vue')
 
 
 Vue.use(VueRouter);
@@ -62,6 +63,10 @@ const router:VueRouter = new VueRouter(
                     {
                         path: 'rain/fall',
                         component: RainFall
+                    },
+                    {
+                        path: 'large/area',
+                        component: LargeArea
                     }
                   ]
             }
