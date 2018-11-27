@@ -14,10 +14,13 @@ import Vue from 'vue'
  * 说明最后组件代码并未分割，但是使用__webpack_require__获取代码块的时机向后延迟了
  */
 const Pie = () => import(/* webpackChunkName: "Pie" */ './component/pie/pie.vue')
+
+/** 折线图 */
 const Line = () => import(/* webpackChunkName: "Line" */ './component/line/line.vue')
 const BasicLine = () => import(/* webpackChunkName: "BasicLine" */ './component/line/basic.line.vue')
 const BasicArea = () => import(/* webpackChunkName: "BasicArea" */ './component/line/basic.area.vue')
 const SmoothLine = () => import(/* webpackChunkName: "SmoothLine" */ './component/line/smooth.line.vue')
+const StackedLine = () => import(/* webpackChunkName: "StackedLine" */ './component/line/stacked.line.vue')
 const StackedArea = () => import(/* webpackChunkName: "StackedArea" */ './component/line/stacked.area.vue')
 
 
@@ -46,6 +49,10 @@ const router:VueRouter = new VueRouter(
                     {
                         path: 'smooth',
                         component: SmoothLine
+                    },
+                    {
+                        path: 'stacked',
+                        component: StackedLine
                     },
                     {
                         path: 'stacked/area',
