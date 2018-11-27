@@ -31,7 +31,25 @@ export default class RainFall extends Vue{
     }
 
 
-   
+    /**
+     * 流量、降雨量图
+     * 
+     * title：配置图例标题
+     * title.text：标题文本
+     * title.subtext：标题富文本，第二行显示
+     * title.left：标题距离容器左边长度
+     * 
+     * grid：绘图网格，代表了一个echarts实例中，绘图的单元，单个 grid 内最多可以放置上下两个 X 轴，左右两个 Y 轴
+     * grid.bottom：当前绘图网格与底部的距离
+     * echarts：可以有多个绘图网格，以对象数组形式呈现，每个对象里有x(),y(),width,height等参数，制定了绘图网格的位置、大小
+     * 一个绘图网格对应了series中的一个元素
+     * 
+     * toolbox：工具箱配置，配置了echarts自带的工具箱
+     * toolbox.feature：工具箱特性
+     * toolbox.feature.dataZoom：数据缩放工具
+     * toolbox.feature.dataZoom.yAxisIndex：配置控制哪些Y轴
+     * 
+     */
     option:EChartOption =  {
         title : {
             text: '雨量流量关系图',
